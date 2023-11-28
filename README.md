@@ -11,9 +11,9 @@ A. Create a Microservice for scraping the metrics and also create a prometheus.y
 
 3. Validate the entire configuration to check if the data is coming or not in Prometheus UI.<br>
 A. Open http://localhost:9090 and access the Prometheus Homepage and select Status and then go to Targets.
-   Open http://localhost:3000 to access your Grafana Dashboard.
 
 5. Create the Dashboards in Grafana on top of the metrics exported by adding the Prometheus as a Datasource.<br>
-A. Add your first data source, select Prometheus and enter the Prometheus server URL and then save and test.
+A. Open http://localhost:3000 to access your Grafana Dashboard.
+   Add your first data source, select Prometheus and enter the Prometheus server URL and then save and test.
    Now build a Dashboard and new Visualization and select Prometheus in that and select the Metric and press Run Queries.
 
