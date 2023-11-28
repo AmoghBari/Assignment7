@@ -14,7 +14,7 @@ Steps :
    Open http://localhost:9090 and access the Prometheus Homepage and select Status and then go to Targets.
 
 5. Create the Dashboards in Grafana on top of the metrics exported by adding the Prometheus as a Datasource.<br>
-   Open http://localhost:3000 to access your Grafana Dashboard.
-   Add your first data source, select Prometheus and enter the Prometheus server URL and then save and test.
+   Open http://localhost:3000 to access your Grafana Dashboard.<br>
+   Add your first data source, select Prometheus and enter the Prometheus server URL and then save and test.<br>
    Now build a Dashboard and new Visualization and select Prometheus and select the Metric and press Run Queries.
 
