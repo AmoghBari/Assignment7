@@ -13,7 +13,7 @@ Steps :
    "sudo docker-compose up -d" command to start the Prometheus and Grafana server.<br>
    Open http://localhost:9090 and access the Prometheus Homepage and select Status and then go to Targets.
    ![image](https://github.com/AmoghBari/Assignment7/assets/145555795/afb5dffd-20c9-485f-b05a-c39e2d9eda7b)
-   You can also see the metrics by clicking the link.
+   You can also see the metrics by clicking the Endpoint link.
    ![image](https://github.com/AmoghBari/Assignment7/assets/145555795/814b83df-2456-4cfc-bab0-c86c3e79f001)
 
 
