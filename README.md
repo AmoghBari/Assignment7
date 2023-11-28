@@ -4,7 +4,7 @@ Prometheus Assignment
 Steps :
 
 1. Install Prometheus and Grafana using Docker (with docker-compose).<br>
-   Create a docker-compose.yml file and pull the Prometheus and Grafana images from DockerHub.
+   Create a docker-compose.yml file to pull the Prometheus and Grafana images from DockerHub.
 
 2. Configure prometheus (scrape configs) such way that it can scrape the metrics from default metric path of the application job.<br>
    Create a Microservice for scraping the metrics and also create a prometheus.yml file and add the scrape intervals and scrape configs.
