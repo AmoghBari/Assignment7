@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>S3 Bucket Manager</title>
+    
+</head>
+<body>
+    <h1>S3 Bucket Manager</h1><br>
+         
+    <div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for messages in messages %}
+                        <li>{{ messages }}</li>
+                    {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div><br>
+
+
+    <div class="topnav">
+    <h2>Create S3 Bucket</h2>
+    <form  action="/create_bucket" method="POST"><br>
+        <label for="bucket_name">Bucket Name :</label>
+        <input type="text" id="bucket_name" name="bucket_name" required>
+        <button type="submit">Create Bucket</button>
+    </form>
+    </div><br><br><br>
+
+
+    <div class=topnav>
+    <h2>List Of S3 Buckets</h2>
+    <form action="/list_buckets"><br>
+    <ul>
+        {% for bucket in buckets %}
+            <li>{{ bucket }}</li>
+        {% endfor %}
+    </ul>
+    <input type="submit" value="List Buckets">
+    </form>
+    </div><br><br><br>
+
+
+    <div class="topnav">
+    <h2>Delete S3 Bucket</h2>
+    <form action="/delete_bucket" method="POST"><br>
+        <label for="'bucket_name">Bucket Name :</label>
+        <input type="text" id="'bucket_name" name="bucket_name" required>
+        <button type="submit">Delete Bucket</button>
+    </form>
+    </div><br><br><br>
+
+
+    <div class="topnav">
+    <h2>Upload File to S3</h2>
+    <form action="/upload_file" method="POST" enctype="multipart/form-data"><br>
+        <label for="bucket">Select A Bucket :</label>
+        <input type="text" id="'bucket_name" name="bucket_name" required><br><br>
+        <label for="path">Select A File To Upload :</label>
+        <input type="file" id="file" name="file">
+        <input type="submit" value="Upload File">
+    </form>
+    </div><br><br><br>
+
+
+    <div class="topnav">
+    <h2>S3 Bucket Object List</h2>
+    <form action="/list_objects" method="POST"><br>
+    <label for="bucket">Select A Bucket :</label>
+    <input type="text" id="'bucket_name" name="bucket_name" required>
+    <button type="submit">List Objects</button>
+    <ul>
+        {% for obj in objects %}
+            <li>{{ obj }}</li>
+        {% endfor %}
+    </ul>
+    </form>
+    </div><br><br><br>
+
+
+    <div class="topnav">
+    <h2>Delete File From S3</h2>
+    <form action="/delete_files" method="POST" ><br>
+    <label for="bucket">Select A Bucket :</label>
+    <input type="text" id="'bucket_name" name="bucket_name" required><br><br>
+    <label for="object_key">File Name :</label>
+    <input type="text" id="object_key" name="object_key" required>
+    <button type="submit">Delete File</button>
+    </form>
+    </div><br><br><br>
+
+
+    <div class="topnav">
+    <h2>Copy File From S3 to S3 Buckets</h2>
+    <form action="/copy_files" method="POST"><br>
+        <label for="source_bucket">Source S3 Bucket :</label>
+        <input type="text" id="source_bucket" name="source_bucket" required>
+        <label for="destination_bucket">Destination S3 Bucket :</label>
+        <input type="text" id="destination_bucket" name="destination_bucket" required><br><br>
+        <label for="source_key">Source File Name :</label>
+        <input type="text" id="source_key" name="source_key" required>
+        <label for="destination_key">Destination File Name :</label>
+        <input type="text" id="destination_key" name="destination_key" required><br>
+        <button type="submit">Copy File</button>
+    </form>
+    </div><br><br><br>
+
+
+    <div class="topnav">
+    <h2>Move File From S3 to S3 Buckets</h2>
+    <form action="move_files" method="POST"><br>
+        <label for="source_bucket">Source S3 Bucket :</label>
+        <input type="text" id="source_bucket" name="source_bucket" required>
+        <label for="destination_bucket">Destination S3 Bucket :</label>
+        <input type="text" id="destination_bucket" name="destination_bucket" required><br><br>
+        <label for="file_key">File Name :</label>
+        <input type="text" name="file_key" required>
+        <input type="submit" value="Move File">
+    </form>
+    </div><br><br><br>
+
+
+    <div class="topnav">
+    <h2>Create Folder In S3 Bucket</h2>
+    <form  action="/create_folder" method="POST"><br>
+    <label for="bucket">Select A Bucket :</label>
+    <input type="text" id="'bucket_name" name="bucket_name" required><br><br>
+    <label for="folder_name">Folder Name :</label>
+    <input type="text" name="folder_name" id="folder_name" required>
+    <input type="submit" value="Create Folder"><br>
+    </form>
+    </div><br><br><br>
+
+    
+    <div class="topnav">
+    <h2>Delete Folder From S3 Bucket</h2>
+    <form  action="/delete_folder" method="POST"><br>
+    <label for="bucket">Select A Bucket :</label>
+    <input type="text" id="'bucket_name" name="bucket_name" required><br><br>
+    <label for="folder_name">Enter Folder Name :</label>
+    <input type="text" name="folder_name" required>
+    <input type="submit" value="Delete Folder">
+    </form>
+    </div>
+</body>
+</html>
