@@ -10,7 +10,7 @@ Steps :
    Create a Microservice for scraping the metrics and also create a prometheus.yml file and add the scrape intervals and scrape configs.
 
 3. Validate the entire configuration to check if the data is coming or not in Prometheus UI.<br>
-   "sudo docker-compose up -d" command to start the Prometheus and Grafana server.
+   "sudo docker-compose up -d" command to start the Prometheus and Grafana server.<br>
    Open http://localhost:9090 and access the Prometheus Homepage and select Status and then go to Targets.
 
 5. Create the Dashboards in Grafana on top of the metrics exported by adding the Prometheus as a Datasource.<br>
